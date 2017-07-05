@@ -23,5 +23,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.qihoo360.replugin:replugin-host-lib:2.1.1'
+    // 屏蔽下面这段无法运行，找不到android.support.v4.content.LocalBroadcastManager
     compile 'com.android.support:support-v4:25.3.1'
 }
