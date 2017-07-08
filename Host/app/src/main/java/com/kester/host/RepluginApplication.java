@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.res.Configuration;
 
 import com.qihoo360.replugin.RePlugin;
+import com.qihoo360.replugin.RePluginConfig;
+import com.qihoo360.replugin.gen.RePluginHostConfig;
 
 /**
  * Created by kester on 2017/7/6.
@@ -13,7 +15,7 @@ public class RepluginApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        RePlugin.App.attachBaseContext(this);
+        RePlugin.App.attachBaseContext(this, new RePluginConfig().setVerifySign(false));
     }
 
     @Override

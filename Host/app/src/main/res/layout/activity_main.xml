@@ -19,7 +19,31 @@
     <Button
         android:id="@+id/demo1"
         android:layout_marginTop="30dp"
-        android:text="Go To Demo1"
+        android:text="Go To Plugin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_below="@id/demo1"
+        android:id="@+id/install_demo1"
+        android:layout_marginTop="10dp"
+        android:text="Install Demo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_below="@id/install_demo1"
+        android:id="@+id/uninstall_demo1"
+        android:layout_marginTop="10dp"
+        android:text="Uninstall Demo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_below="@id/uninstall_demo1"
+        android:id="@+id/update_demo1"
+        android:layout_marginTop="10dp"
+        android:text="Update Demo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </RelativeLayout>
