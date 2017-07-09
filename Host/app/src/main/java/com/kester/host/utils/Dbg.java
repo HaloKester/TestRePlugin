@@ -14,11 +14,7 @@ public class Dbg {
         Log.e("jinghai", what);
     }
 
-    public static void i(String method, String what) {
-        Log.i("jinghai", method + "#" + what);
-    }
-
-    public static void i(String what) {
-        Log.i("jinghai", what);
-    }
+//    private static void toast(String msg) {
+//        Toast.makeText(TestRepluginApplication.getInstance(), msg, Toast.LENGTH_SHORT).show();
+//    }
 }

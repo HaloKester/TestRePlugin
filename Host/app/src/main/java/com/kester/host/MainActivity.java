@@ -9,6 +9,7 @@ import android.os.Environment;
 import android.view.View;
 
 import com.kester.host.activity.HostActivity1;
+import com.kester.host.activity.HostActivity2;
 import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.model.PluginInfo;
 
@@ -27,6 +28,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.uninstall_demo1).setOnClickListener(this);
         findViewById(R.id.update_demo1).setOnClickListener(this);
         findViewById(R.id.test_activity_service).setOnClickListener(this);
+        findViewById(R.id.test_provider_receiver).setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +59,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
             case R.id.test_activity_service:
                 startActivity(new Intent(MainActivity.this, HostActivity1.class));
+                break;
+
+            case R.id.test_provider_receiver:
+                startActivity(new Intent(MainActivity.this, HostActivity2.class));
                 break;
 
             default:

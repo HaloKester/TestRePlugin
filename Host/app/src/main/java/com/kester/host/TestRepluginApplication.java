@@ -11,7 +11,9 @@ import com.qihoo360.replugin.gen.RePluginHostConfig;
 /**
  * Created by kester on 2017/7/6.
  */
-public class RepluginApplication extends Application {
+public class TestRepluginApplication extends Application {
+    private static TestRepluginApplication mIns;
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -40,5 +42,10 @@ public class RepluginApplication extends Application {
     public void onCreate() {
         super.onCreate();
         RePlugin.App.onCreate();
+        mIns = this;
+    }
+
+    public static TestRepluginApplication getInstance() {
+        return mIns;
     }
 }
