@@ -29,6 +29,9 @@
                   android:screenOrientation="portrait" />
         <activity android:name=".activity.PluginActivity2"
                   android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PluginActivity3"
+                  android:screenOrientation="portrait"/>
+
         <service android:name=".service.PluginService1"/>
         <receiver android:name=".receiver.PluginReceiverS1">
             <intent-filter>

@@ -1,29 +1,27 @@
-package com.kester.host.activity;
+package com.kester.plugin1.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.kester.host.R;
-import com.kester.host.utils.Constant;
-import com.qihoo360.replugin.RePlugin;
+import com.kester.plugin1.R;
+import com.kester.plugin1.utils.Constant;
 
 /**
  * Created by kester on 2017/7/9.
  */
-public class HostActivity2 extends Activity implements View.OnClickListener{
+public class PluginActivity3 extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_host2);
+        setContentView(R.layout.activity_plugin3);
         initView();
     }
 
     private void initView() {
         findViewById(R.id.btn1).setOnClickListener(this);
         findViewById(R.id.btn2).setOnClickListener(this);
-        findViewById(R.id.btn3).setOnClickListener(this);
     }
 
     @Override
@@ -37,26 +35,21 @@ public class HostActivity2 extends Activity implements View.OnClickListener{
                 sendBroadcast2PluginReceiverS1();
                 break;
 
-            case R.id.btn3:
-                RePlugin.startActivity(HostActivity2.this, RePlugin.createIntent("plugin1", "com.kester.plugin1.activity.PluginActivity3"));
-                break;
-
             default:
                 break;
-
         }
     }
 
     private void sendBroadcast2HostReceiverS1() {
         Intent intent = new Intent();
-        intent.putExtra(Constant.FROM, "HostActivity2");
+        intent.putExtra(Constant.FROM, "PluginActivity3");
         intent.setAction(Constant.ACTION_HOST_RECEIVER_S1);
         sendBroadcast(intent);
     }
 
     private void sendBroadcast2PluginReceiverS1() {
         Intent intent = new Intent();
-        intent.putExtra(Constant.FROM, "HostActivity2");
+        intent.putExtra(Constant.FROM, "PluginActivity3");
         intent.setAction(Constant.ACTION_PLUGIN_RECEIVER_S1);
         sendBroadcast(intent);
     }
