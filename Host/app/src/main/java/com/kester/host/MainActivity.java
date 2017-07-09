@@ -1,12 +1,14 @@
 package com.kester.host;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 
+import com.kester.host.activity.HostActivity1;
 import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.model.PluginInfo;
 
@@ -24,6 +26,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.install_demo1).setOnClickListener(this);
         findViewById(R.id.uninstall_demo1).setOnClickListener(this);
         findViewById(R.id.update_demo1).setOnClickListener(this);
+        findViewById(R.id.test_activity_service).setOnClickListener(this);
     }
 
     @Override
@@ -50,6 +53,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 if (pi2 != null) {
                     RePlugin.preload(pi2);
                 }
+                break;
+
+            case R.id.test_activity_service:
+                startActivity(new Intent(MainActivity.this, HostActivity1.class));
                 break;
 
             default:

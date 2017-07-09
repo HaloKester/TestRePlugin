@@ -16,13 +16,19 @@
 
         <activity
             android:theme="@style/AppTheme"
-            android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.PluginActivity1"
+                  android:screenOrientation="portrait" />
+        <activity android:name=".activity.PluginActivity2"
+                  android:screenOrientation="portrait"/>
+        <service android:name=".service.PluginService1"/>
     </application>
 
 </manifest>

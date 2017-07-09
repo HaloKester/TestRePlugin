@@ -46,4 +46,12 @@
         android:text="Update Demo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_below="@id/update_demo1"
+        android:id="@+id/test_activity_service"
+        android:layout_marginTop="10dp"
+        android:text="测试宿主插件调用Activity/Service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
