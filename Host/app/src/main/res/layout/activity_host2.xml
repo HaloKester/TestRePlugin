@@ -53,6 +53,32 @@
                 android:text="打开PluginActivity3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="宿主创建宿主动态Receiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn4"
+                android:textSize="15sp"
+                android:text="创建HostReceiverD1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="宿主发广播给宿主创建的宿主动态Receiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn5"
+                android:textSize="15sp"
+                android:text="发广播给HostReceiverD1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
         </LinearLayout>
 
     </ScrollView>
