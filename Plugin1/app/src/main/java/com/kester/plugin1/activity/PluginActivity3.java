@@ -23,6 +23,7 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
         findViewById(R.id.btn1).setOnClickListener(this);
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
+        findViewById(R.id.btn4).setOnClickListener(this);
     }
 
     @Override
@@ -40,9 +41,20 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
                 sendBroadcast2HostReceiverD1();
                 break;
 
+            case R.id.btn4:
+                sendBroadcast2PluginReceiverD1();
+                break;
+
             default:
                 break;
         }
+    }
+
+    private void sendBroadcast2PluginReceiverD1() {
+        Intent intent = new Intent();
+        intent.setAction(Constant.ACTION_PLUGIN_RECEIVER_D1);
+        intent.putExtra(Constant.FROM, "PluginActivity3");
+        sendBroadcast(intent);
     }
 
     private void sendBroadcast2HostReceiverD1() {

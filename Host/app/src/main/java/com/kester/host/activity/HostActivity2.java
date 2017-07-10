@@ -5,11 +5,14 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.view.View;
 
 import com.kester.host.R;
 import com.kester.host.receiver.HostReceiverD1;
 import com.kester.host.utils.Constant;
+import com.kester.plugin1.aidl.IPlugin1Aidl;
 import com.qihoo360.replugin.RePlugin;
 
 /**
@@ -29,6 +32,8 @@ public class HostActivity2 extends Activity implements View.OnClickListener{
         findViewById(R.id.btn3).setOnClickListener(this);
         findViewById(R.id.btn4).setOnClickListener(this);
         findViewById(R.id.btn5).setOnClickListener(this);
+        findViewById(R.id.btn6).setOnClickListener(this);
+        findViewById(R.id.btn7).setOnClickListener(this);
     }
 
     @Override
@@ -54,6 +59,14 @@ public class HostActivity2 extends Activity implements View.OnClickListener{
                 sendBroadcast2HostReceiverD1();
                 break;
 
+            case R.id.btn6:
+                registerPluginReceiverD1();
+                break;
+
+            case R.id.btn7:
+                sendBroadcast2PluginReceiverD1();
+                break;
+
             default:
                 break;
 
@@ -64,6 +77,40 @@ public class HostActivity2 extends Activity implements View.OnClickListener{
     protected void onDestroy() {
         super.onDestroy();
         unRegisterHostReceiverD1();
+        unRegisterPluginReceiverD1();
+    }
+
+    private void sendBroadcast2PluginReceiverD1() {
+        Intent intent = new Intent();
+        intent.setAction(Constant.ACTION_PLUGIN_RECEIVER_D1);
+        intent.putExtra(Constant.FROM, "HostActivity2");
+        sendBroadcast(intent);
+    }
+
+    private void registerPluginReceiverD1() {
+        IBinder b = RePlugin.fetchBinder("plugin1", Constant.BINDER_PLUGIN1_AIDL);
+        if (b == null) {
+            return;
+        }
+        IPlugin1Aidl i = IPlugin1Aidl.Stub.asInterface(b);
+        try {
+            i.registerPluginReceiverD1();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void unRegisterPluginReceiverD1() {
+        IBinder b = RePlugin.fetchBinder("plugin1", Constant.BINDER_PLUGIN1_AIDL);
+        if (b == null) {
+            return;
+        }
+        IPlugin1Aidl i = IPlugin1Aidl.Stub.asInterface(b);
+        try {
+            i.unRegisterPluginReceiverD1();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     private void sendBroadcast2HostReceiverD1() {
