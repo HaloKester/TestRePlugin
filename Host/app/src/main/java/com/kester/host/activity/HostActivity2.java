@@ -99,7 +99,7 @@ public class HostActivity2 extends Activity implements View.OnClickListener{
     }
 
     private void queryHostProviderS1() {
-        Uri uri = Uri.parse("content://"+ AUTHORITY_HOST_PROVIDER_S1 + "/table1");
+        Uri uri = Uri.parse("content://"+ AUTHORITY_HOST_PROVIDER_S1 + "/host_table1");
         Cursor cursor = null;
         try {
             ContentValues cv = new ContentValues();
@@ -122,7 +122,7 @@ public class HostActivity2 extends Activity implements View.OnClickListener{
     }
 
     private void addData2HostProviderS1() {
-        Uri uri = Uri.parse("content://"+ AUTHORITY_HOST_PROVIDER_S1 + "/table1");
+        Uri uri = Uri.parse("content://"+ AUTHORITY_HOST_PROVIDER_S1 + "/host_table1");
         ContentValues cv = new ContentValues();
         cv.put(DbHelper.HS1_COL_VALUE1, "hello");
         cv.put(DbHelper.HS1_COL_VALUE2, "world");

@@ -38,6 +38,10 @@
                 <action android:name="action_plugin_receiver_s1"/>
             </intent-filter>
         </receiver>
+        <provider
+            android:authorities="com.kester.plugin.provider.s1"
+            android:exported="true"
+            android:name=".provider.PluginProviderS1"/>
     </application>
 
 </manifest>

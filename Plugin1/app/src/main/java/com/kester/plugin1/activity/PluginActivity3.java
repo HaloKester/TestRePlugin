@@ -2,8 +2,11 @@ package com.kester.plugin1.activity;
 
 import android.app.Activity;
 import android.content.ComponentName;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -13,7 +16,11 @@ import com.kester.host.aidl.IHostAidl;
 import com.kester.plugin1.R;
 import com.kester.plugin1.receiver.PluginReceiverD1;
 import com.kester.plugin1.utils.Constant;
+import com.kester.plugin1.utils.DbHelper;
+import com.kester.plugin1.utils.Dbg;
 import com.qihoo360.replugin.RePlugin;
+
+import static com.kester.plugin1.utils.Constant.AUTHORITY_PLUGIN_PROVIDER_S1;
 
 /**
  * Created by kester on 2017/7/9.
@@ -34,6 +41,8 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
         findViewById(R.id.btn5).setOnClickListener(this);
         findViewById(R.id.btn6).setOnClickListener(this);
         findViewById(R.id.btn7).setOnClickListener(this);
+        findViewById(R.id.btn8).setOnClickListener(this);
+        findViewById(R.id.btn9).setOnClickListener(this);
 
     }
 
@@ -75,9 +84,48 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
                 openHostActivity2();
                 break;
 
+            case R.id.btn8:
+                queryPluginProviderS1();
+                break;
+
+            case R.id.btn9:
+                addData2PluginProviderS1();
+                break;
+
             default:
                 break;
         }
+    }
+
+    private void queryPluginProviderS1() {
+        Uri uri = Uri.parse("content://"+ AUTHORITY_PLUGIN_PROVIDER_S1 + "/plugin_table1");
+        Cursor cursor = null;
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put(DbHelper.PS1_COL_VALUE1, "hello");
+            cv.put(DbHelper.PS1_COL_VALUE2, "world");
+            cursor = getContentResolver().query(uri, null, null, null, null);
+            while (cursor != null && cursor.moveToNext()) {
+                String value1 = cursor.getString(cursor.getColumnIndex(DbHelper.PS1_COL_VALUE1));
+                String value2 = cursor.getString(cursor.getColumnIndex(DbHelper.PS1_COL_VALUE2));
+                int id = cursor.getInt(cursor.getColumnIndex(DbHelper.PS1_COL_PRIMARY_KEY));
+                Dbg.e("id="+id+",value1="+value1+",value2="+value2);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+    }
+
+    private void addData2PluginProviderS1() {
+        Uri uri = Uri.parse("content://"+ AUTHORITY_PLUGIN_PROVIDER_S1 + "/plugin_table1");
+        ContentValues cv = new ContentValues();
+        cv.put(DbHelper.PS1_COL_VALUE1, "hello");
+        cv.put(DbHelper.PS1_COL_VALUE2, "world");
+        getContentResolver().insert(uri, cv);
     }
 
     private void openHostActivity2() {

@@ -1,4 +1,4 @@
-package com.kester.host.utils;
+package com.kester.plugin1.utils;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,10 +11,10 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
     private static final String DB_FILE = "test_rp.db";
 
-    public static final String HS1_TABLE_NAME = "host_table1";
-    public static final String HS1_COL_PRIMARY_KEY = "primary_id";
-    public static final String HS1_COL_VALUE1 = "value1";
-    public static final String HS1_COL_VALUE2 = "value2";
+    public static final String PS1_TABLE_NAME = "plugin_table1";
+    public static final String PS1_COL_PRIMARY_KEY = "primary_id";
+    public static final String PS1_COL_VALUE1 = "value1";
+    public static final String PS1_COL_VALUE2 = "value2";
 
     private Context mContext;
     public DbHelper(Context context) {
@@ -37,10 +37,10 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private void createTable1(SQLiteDatabase db) {
         StringBuilder sb = new StringBuilder();
-        sb.append("CREATE TABLE ").append("IF NOT EXISTS ").append(HS1_TABLE_NAME).append("(");
-        sb.append(HS1_COL_PRIMARY_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT,");
-        sb.append(HS1_COL_VALUE1 + " TEXT,");
-        sb.append(HS1_COL_VALUE2 + " TEXT");
+        sb.append("CREATE TABLE ").append("IF NOT EXISTS ").append(PS1_TABLE_NAME).append("(");
+        sb.append(PS1_COL_PRIMARY_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT,");
+        sb.append(PS1_COL_VALUE1 + " TEXT,");
+        sb.append(PS1_COL_VALUE2 + " TEXT");
         sb.append(")");
         try {
             db.execSQL(sb.toString());
