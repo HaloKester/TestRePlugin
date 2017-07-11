@@ -62,7 +62,7 @@
             <Button
                 android:id="@+id/btn4"
                 android:textSize="15sp"
-                android:text="创建HostReceiverD1"
+                android:text="调起HostReceiverD1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

@@ -2,11 +2,16 @@ package com.kester.plugin1.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.view.View;
 
+import com.kester.host.aidl.IHostAidl;
 import com.kester.plugin1.R;
 import com.kester.plugin1.utils.Constant;
+import com.qihoo360.replugin.RePlugin;
 
 /**
  * Created by kester on 2017/7/9.
@@ -24,6 +29,14 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
         findViewById(R.id.btn4).setOnClickListener(this);
+        findViewById(R.id.btn5).setOnClickListener(this);
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unRegisterHostReceiverD1();
     }
 
     @Override
@@ -45,8 +58,37 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
                 sendBroadcast2PluginReceiverD1();
                 break;
 
+            case R.id.btn5:
+                registerHostReceiverD1();
+                break;
+
             default:
                 break;
+        }
+    }
+
+    private void registerHostReceiverD1() {
+        IBinder b = RePlugin.fetchBinder("main", Constant.BINDER_HOST_AIDL);
+        if (b == null) {
+            return;
+        }
+        IHostAidl i = IHostAidl.Stub.asInterface(b);
+        try {
+            i.registerHostReceiverD1();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+    private void unRegisterHostReceiverD1() {
+        IBinder b = RePlugin.fetchBinder("main", Constant.BINDER_HOST_AIDL);
+        if (b == null) {
+            return;
+        }
+        IHostAidl i = IHostAidl.Stub.asInterface(b);
+        try {
+            i.unRegisterHostReceiverD1();
+        } catch (RemoteException e) {
+            e.printStackTrace();
         }
     }
 

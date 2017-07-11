@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 
+import com.kester.host.aidl.HostBinderFetcher;
+import com.qihoo360.replugin.IHostBinderFetcher;
 import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.RePluginConfig;
 import com.qihoo360.replugin.gen.RePluginHostConfig;
@@ -43,6 +45,7 @@ public class TestRepluginApplication extends Application {
         super.onCreate();
         RePlugin.App.onCreate();
         mIns = this;
+        RePlugin.registerHostBinder(new HostBinderFetcher());
     }
 
     public static TestRepluginApplication getInstance() {
