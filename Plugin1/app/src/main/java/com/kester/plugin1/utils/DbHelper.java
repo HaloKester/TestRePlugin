@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DbHelper extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
-    private static final String DB_FILE = "test_rp.db";
+    private static final String DB_FILE = "test_plugin_rp.db";
 
     public static final String PS1_TABLE_NAME = "plugin_table1";
     public static final String PS1_COL_PRIMARY_KEY = "primary_id";
