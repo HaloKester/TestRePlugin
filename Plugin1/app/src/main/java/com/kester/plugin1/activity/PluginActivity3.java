@@ -1,6 +1,7 @@
 package com.kester.plugin1.activity;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.View;
 
 import com.kester.host.aidl.IHostAidl;
 import com.kester.plugin1.R;
+import com.kester.plugin1.receiver.PluginReceiverD1;
 import com.kester.plugin1.utils.Constant;
 import com.qihoo360.replugin.RePlugin;
 
@@ -30,6 +32,8 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
         findViewById(R.id.btn3).setOnClickListener(this);
         findViewById(R.id.btn4).setOnClickListener(this);
         findViewById(R.id.btn5).setOnClickListener(this);
+        findViewById(R.id.btn6).setOnClickListener(this);
+        findViewById(R.id.btn7).setOnClickListener(this);
 
     }
 
@@ -37,6 +41,7 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
     protected void onDestroy() {
         super.onDestroy();
         unRegisterHostReceiverD1();
+        unRegisterPluginReceiverD1();
     }
 
     @Override
@@ -62,8 +67,34 @@ public class PluginActivity3 extends Activity implements View.OnClickListener{
                 registerHostReceiverD1();
                 break;
 
+            case R.id.btn6:
+                registerPluginReceiverD1();
+                break;
+
+            case R.id.btn7:
+                openHostActivity2();
+                break;
+
             default:
                 break;
+        }
+    }
+
+    private void openHostActivity2() {
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName("com.kester.host", "com.kester.host.activity.HostActivity2"));
+        startActivity(intent);
+    }
+
+    private PluginReceiverD1 mPluginReceiverD1;
+    private void registerPluginReceiverD1() {
+        mPluginReceiverD1 = new PluginReceiverD1();
+        IntentFilter filter = new IntentFilter(Constant.ACTION_PLUGIN_RECEIVER_D1);
+        registerReceiver(mPluginReceiverD1, filter);
+    }
+    private void unRegisterPluginReceiverD1() {
+        if (mPluginReceiverD1 != null) {
+            unregisterReceiver(mPluginReceiverD1);
         }
     }
 
