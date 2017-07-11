@@ -31,6 +31,10 @@
                 <action android:name="action_host_receiver_s1"/>
             </intent-filter>
         </receiver>
+        <provider
+            android:authorities="com.kester.host.provider.s1"
+            android:exported="true"
+            android:name=".provider.HostProviderS1"/>
     </application>
 
 </manifest>
