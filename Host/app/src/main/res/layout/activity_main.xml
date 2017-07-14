@@ -62,4 +62,12 @@
         android:text="宿主插件调用Provider/Receiver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_below="@id/test_provider_receiver"
+        android:id="@+id/test_library"
+        android:layout_marginTop="10dp"
+        android:text="公共库使用"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
