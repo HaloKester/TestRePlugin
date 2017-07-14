@@ -16,6 +16,9 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'file:///Users/kester/WorkSpace/TestRePlugin/localrepo/'
+        }
     }
 }
 
