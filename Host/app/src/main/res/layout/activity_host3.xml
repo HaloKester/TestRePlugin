@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:CustomTitleView="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
@@ -30,4 +31,13 @@
         android:text="反射调用BigLibrary的带参带返方法"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <com.kester.midlibrary.MLView1
+        CustomTitleView:titleText="View From MidLibrary"
+        CustomTitleView:titleTextColor="#000000"
+        CustomTitleView:titleTextSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
 </LinearLayout>
