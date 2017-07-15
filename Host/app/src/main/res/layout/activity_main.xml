@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.kester.host.MainActivity">
 
     <TextView
@@ -17,38 +18,12 @@
         android:text="Hello World!"/>
 
     <Button
-        android:id="@+id/demo1"
-        android:layout_marginTop="30dp"
-        android:text="Go To Plugin1"
         android:layout_width="match_parent"
+        android:id="@+id/test_plugin_update"
+        android:text="插件更新"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:layout_below="@id/demo1"
-        android:id="@+id/install_demo1"
-        android:layout_marginTop="10dp"
-        android:text="Install Demo1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:layout_below="@id/install_demo1"
-        android:id="@+id/uninstall_demo1"
-        android:layout_marginTop="10dp"
-        android:text="Uninstall Demo1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:layout_below="@id/uninstall_demo1"
-        android:id="@+id/update_demo1"
-        android:layout_marginTop="10dp"
-        android:text="Update Demo1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:layout_below="@id/update_demo1"
         android:id="@+id/test_activity_service"
         android:layout_marginTop="10dp"
         android:text="宿主插件调用Activity/Service"
@@ -56,7 +31,6 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:layout_below="@id/test_activity_service"
         android:id="@+id/test_provider_receiver"
         android:layout_marginTop="10dp"
         android:text="宿主插件调用Provider/Receiver"
@@ -64,10 +38,9 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:layout_below="@id/test_provider_receiver"
         android:id="@+id/test_library"
         android:layout_marginTop="10dp"
         android:text="公共库使用"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-</RelativeLayout>
+</LinearLayout>

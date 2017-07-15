@@ -37,6 +37,8 @@
             android:name=".provider.HostProviderS1"/>
         <activity android:name=".activity.HostActivity3"
                   android:screenOrientation="portrait"/>
+        <activity android:name=".activity.HostActivity4"
+                  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
