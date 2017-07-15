@@ -23,6 +23,7 @@ public class HostActivity4 extends Activity implements View.OnClickListener{
         findViewById(R.id.btn1).setOnClickListener(this);
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
+        findViewById(R.id.btn4).setOnClickListener(this);
     }
 
     @Override
@@ -40,13 +41,17 @@ public class HostActivity4 extends Activity implements View.OnClickListener{
                 updatePlugin1();
                 break;
 
+            case R.id.btn4:
+                RePlugin.startActivity(HostActivity4.this, RePlugin.createIntent("plugin1", "com.kester.plugin1.MainActivity"));
+                break;
+
             default:
                 break;
         }
     }
 
     private void installPlugin1() {
-        PluginInfo pi = RePlugin.install("/sdcard/Android/data/com.kester.host/cache/plugin1/v1/plugin1.apk");
+        PluginInfo pi = RePlugin.install("/sdcard/Android/data/com.kester.host/cache/plugin1/plugin1.apk");
         if (pi != null) {
             RePlugin.preload(pi);
         }
@@ -57,7 +62,7 @@ public class HostActivity4 extends Activity implements View.OnClickListener{
     }
 
     private void updatePlugin1() {
-        PluginInfo pi = RePlugin.install("/sdcard/Android/data/com.kester.host/cache/plugin1/v2/plugin1.apk");
+        PluginInfo pi = RePlugin.install("/sdcard/Android/data/com.kester.host/cache/plugin1/plugin1.apk");
         if (pi != null) {
             RePlugin.preload(pi);
         }

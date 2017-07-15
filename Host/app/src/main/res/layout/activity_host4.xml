@@ -33,4 +33,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/btn4"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:text="打开Plugin1的Activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

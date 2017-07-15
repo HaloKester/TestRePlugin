@@ -44,7 +44,7 @@
 
             <TextView
                 android:layout_marginTop="10dp"
-                android:text="插件发广播给宿主创建的宿主动态Receiver"
+                android:text="插件发广播给宿主/插件创建的宿主动态Receiver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <Button
@@ -56,7 +56,7 @@
 
             <TextView
                 android:layout_marginTop="10dp"
-                android:text="插件发广播给宿主创建的插件动态Receiver"
+                android:text="插件发广播给宿主/插件创建的插件动态Receiver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <Button
