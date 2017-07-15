@@ -1,1 +1,1 @@
-include ':app', ':MidLibrary'
+include ':app', ':LitLibrary'

@@ -15,13 +15,13 @@ import android.view.View;
 
 import com.kester.host.R;
 import com.kester.host.receiver.HostReceiverD1;
-import com.kester.host.utils.Constant;
 import com.kester.host.utils.DbHelper;
-import com.kester.host.utils.Dbg;
+import com.kester.litlibrary.Constant;
+import com.kester.litlibrary.Dbg;
 import com.kester.plugin1.aidl.IPlugin1Aidl;
 import com.qihoo360.replugin.RePlugin;
 
-import static com.kester.host.utils.Constant.AUTHORITY_HOST_PROVIDER_S1;
+import static com.kester.litlibrary.Constant.AUTHORITY_HOST_PROVIDER_S1;
 
 /**
  * Created by kester on 2017/7/9.

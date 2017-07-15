@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.kester.host.R;
-import com.kester.host.utils.Dbg;
+import com.kester.litlibrary.Dbg;
+import com.kester.litlibrary.DisplayUtils;
 import com.qihoo360.replugin.RePlugin;
 
 import java.lang.reflect.Constructor;
@@ -27,6 +28,8 @@ public class HostActivity3 extends Activity implements View.OnClickListener{
     private void initView() {
         findViewById(R.id.btn1).setOnClickListener(this);
         findViewById(R.id.btn2).setOnClickListener(this);
+        findViewById(R.id.btn3).setOnClickListener(this);
+        findViewById(R.id.btn4).setOnClickListener(this);
     }
 
     @Override
@@ -40,9 +43,21 @@ public class HostActivity3 extends Activity implements View.OnClickListener{
                 invokePluginBigLibraryMethod();
                 break;
 
+            case R.id.btn3:
+                invokeLitLibraryMethod();
+                break;
+
+            case R.id.btn4:
+                RePlugin.startActivity(HostActivity3.this, RePlugin.createIntent("plugin1", "com.kester.plugin1.activity.PluginActivity4"));
+                break;
             default:
                 break;
         }
+    }
+
+    private void invokeLitLibraryMethod() {
+        int width = DisplayUtils.getScreenWidth(getApplicationContext());
+        Dbg.e("width="+width+",from LitLibrary");
     }
 
     private void invokePluginBigLibraryMethod() {

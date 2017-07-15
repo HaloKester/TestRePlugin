@@ -3,7 +3,7 @@ package com.kester.host.aidl;
 import android.os.IBinder;
 import android.text.TextUtils;
 
-import com.kester.host.utils.Constant;
+import com.kester.litlibrary.Constant;
 import com.qihoo360.replugin.IHostBinderFetcher;
 
 /**

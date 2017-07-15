@@ -1,16 +1,15 @@
-apply plugin: 'com.android.application'
-apply plugin: 'replugin-host-gradle'
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
+
     defaultConfig {
-        applicationId "com.kester.host"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -21,8 +20,14 @@ android {
 }
 
 dependencies {
-    compile 'com.qihoo360.replugin:replugin-host-lib:2.1.1'
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.kester.replugin:LitLibrary:0.0.1-SNAPSHOT'
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url:LOCAL_REPO_URL)
+        pom.groupId = GROUP_ID
+        pom.artifactId = ARTIFACTID
+        pom.version = LIBRARY_VERSION
+    }
 }

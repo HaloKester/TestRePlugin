@@ -3,8 +3,8 @@ package com.kester.plugin1.aidl;
 import android.content.IntentFilter;
 import android.os.RemoteException;
 
+import com.kester.litlibrary.Constant;
 import com.kester.plugin1.receiver.PluginReceiverD1;
-import com.kester.plugin1.utils.Constant;
 import com.qihoo360.replugin.RePlugin;
 
 /**

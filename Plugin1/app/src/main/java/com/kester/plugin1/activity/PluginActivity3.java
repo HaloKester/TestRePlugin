@@ -13,14 +13,14 @@ import android.os.RemoteException;
 import android.view.View;
 
 import com.kester.host.aidl.IHostAidl;
+import com.kester.litlibrary.Constant;
+import com.kester.litlibrary.Dbg;
 import com.kester.plugin1.R;
 import com.kester.plugin1.receiver.PluginReceiverD1;
-import com.kester.plugin1.utils.Constant;
 import com.kester.plugin1.utils.DbHelper;
-import com.kester.plugin1.utils.Dbg;
 import com.qihoo360.replugin.RePlugin;
 
-import static com.kester.plugin1.utils.Constant.AUTHORITY_PLUGIN_PROVIDER_S1;
+import static com.kester.litlibrary.Constant.AUTHORITY_PLUGIN_PROVIDER_S1;
 
 /**
  * Created by kester on 2017/7/9.

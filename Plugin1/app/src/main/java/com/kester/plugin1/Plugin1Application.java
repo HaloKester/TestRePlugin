@@ -2,8 +2,8 @@ package com.kester.plugin1;
 
 import android.app.Application;
 
+import com.kester.litlibrary.Constant;
 import com.kester.plugin1.aidl.Plugin1AidlImpl;
-import com.kester.plugin1.utils.Constant;
 import com.qihoo360.replugin.RePlugin;
 
 /**

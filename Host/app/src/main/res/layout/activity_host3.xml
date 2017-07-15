@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:CustomTitleView="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
@@ -22,7 +21,7 @@
         android:id="@+id/ll1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical"/>
 
     <Button
         android:id="@+id/btn2"
@@ -32,12 +31,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.kester.midlibrary.MLView1
-        CustomTitleView:titleText="View From MidLibrary"
-        CustomTitleView:titleTextColor="#000000"
-        CustomTitleView:titleTextSize="16sp"
+    <Button
+        android:id="@+id/btn3"
+        android:textSize="15sp"
         android:layout_marginTop="10dp"
+        android:text="调用LitLibrary的方法"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn4"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:text="打开PluginActivity4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
 </LinearLayout>
