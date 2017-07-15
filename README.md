@@ -58,3 +58,6 @@ LitLibrary：小型公共库，用于放置非常独立的业务无关的工具�
 a.宿主反射获取BigLibrary的View展示，通过传递View规避了共享资源  <br/>
 b.宿主反射调用BigLibrary的带参数带返回值方法  <br/>
 c.宿主插件调用LitLibrary方法  <br/>
+#### 4.3 库更新
+PluginBigLibrary的更新使用插件正常更新机制  <br/>
+LitLibrary的更新可以在Host目录下使用bash uploadLitLibrary.sh更新AAR到本地Maven（localrepo目录里)，由宿主或插件自行在gradle里提高版本号依赖  <br/>
