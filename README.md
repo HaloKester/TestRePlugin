@@ -20,7 +20,7 @@ TestRePlugin是插件化框架RePlugin各种开发场景覆盖的Demo，主要�
 点击“更新插件Plugin1”，若Plugin1正在运行，则在进程重启后生效
 ### 2.宿主插件调用Activity/Service
 验证了以下几个场景，log可通过标签"jinghai"查看  
-a.宿主打开宿主Activity  
+a.宿主打开宿主Activity  <br/>
 b.宿主打开宿主Service  
 c.宿主打开插件Activity  
 d.宿主打开插件Service  
